@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Site",
+    title: "PhotoShack - MVP",
+    author: "Alex Lee",
+    description: "MVP Project developed using Gatsby and Firebase"
   },
   plugins: [
     "gatsby-plugin-sass",
