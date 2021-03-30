@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Editor from './editor.js';
 
 const Homepage = () => {
 
@@ -31,9 +32,10 @@ const Homepage = () => {
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to = '/'>Logout</Link>
+          {/* <Link to = '/'>Logout</Link> */}
         </MenuItem>
       </Menu>
+      <Editor />
     </div>
   );
 };

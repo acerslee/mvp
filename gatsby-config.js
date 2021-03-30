@@ -5,6 +5,7 @@ module.exports = {
     description: "MVP Project developed using Gatsby and Firebase"
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
