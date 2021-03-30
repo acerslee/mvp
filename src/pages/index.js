@@ -1,13 +1,13 @@
 import * as React from "react"
-import Intro from './components/intro.js';
-import Login from './components/login.js';
-import Signup from './components/signup.js';
+// import Intro from './components/intro.js';
+// import Login from './components/login.js';
+// import Signup from './components/signup.js';
 import Homepage from './components/home.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import { BrowserRouter, Switch, Route } from 'react-router-dom';1
 
 const IndexPage = () => {
 
-  const user = null;
+  // const user = null;
 
   return(
     // user ?
