@@ -13,12 +13,12 @@ const Homepage = () => {
   };
 
   const handleClose = () => {
-    setMenu = false;
+    setMenu(null);
   };
 
   return(
     <div id = 'homepage'>
-      <Button onClick = {handleClick}>
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick = {handleClick}>
         Menu
       </Button>
       <Menu
