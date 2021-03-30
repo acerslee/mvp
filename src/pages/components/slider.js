@@ -10,6 +10,7 @@ const Slider = ({ min, max, value, filterSlider }) => (
       value = {value}
       onChange = {filterSlider}
     />
+    <p>{value}</p>
   </div>
 );
 

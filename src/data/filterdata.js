@@ -2,9 +2,9 @@ const filterOptions = [
   {
     name: 'Brightness',
     property: 'brightness',
-    value: 50,
+    value: 100,
     range: {
-      min: 0,
+      min: 20,
       max: 200
     },
     unit: '%'
@@ -12,9 +12,19 @@ const filterOptions = [
   {
     name: 'Contrast',
     property: 'contrast',
-    value: 50,
+    value: 100,
     range: {
-      min: 0,
+      min: 20,
+      max: 200
+    },
+    unit: '%'
+  },
+  {
+    name: 'Saturate',
+    property: 'saturate',
+    value: 100,
+    range: {
+      min: 20,
       max: 200
     },
     unit: '%'

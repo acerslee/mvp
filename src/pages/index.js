@@ -1,15 +1,20 @@
-import * as React from "react"
+import * as React from "react";
+import { Helmet } from 'react-helmet';
 // import Intro from './components/intro.js';
 // import Login from './components/login.js';
 // import Signup from './components/signup.js';
 import Homepage from './components/home.js';
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';1
+// import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 const IndexPage = () => {
 
   // const user = null;
 
   return(
+    // <Helmet>
+    //   <meta charSet = "utf-8" />
+    //   <title>MVP</title>
+    // </Helmet>
     // user ?
     //   <Homepage />
     // :
