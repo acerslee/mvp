@@ -1,16 +1,16 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/storage';
 import 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey:  process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID
+  apiKey:  "AIzaSyBANle7MnNQMPXuxC-HLPA-d2MQ-p2c6QA",
+  authDomain: "auth-development-2da18.firebaseapp.com",
+  projectId: "auth-development-2da18",
+  storageBucket: "auth-development-2da18.appspot.com",
+  messagingSenderId: "132814518434",
+  appId: "1:132814518434:web:2cb1200f4a575327147ffb"
 };
 
 firebase.initializeApp(firebaseConfig)

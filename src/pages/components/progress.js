@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useStorage from '../../hooks/useStorage.js';
 
 
-const Progress = () => {
+const ProgressBar = ({ image, setImage }) => {
+
+  const { url, progress } = useStorage(image);
+  console.log(progress, url);
+
+  useEffect(() => {
+    if (url) setImage(null);
+  },[url, setImage])
+
   return(
-    <div className = 'progres-bar'>
-      progress
+    <div
+      className = 'progress-bar'
+      style = {{
+        width: progress + '%',
+        height: '1vw',
+        backgroundColor: 'blue'
+      }}
+    >
     </div>
   )
 }
 
-export default Progress;
+export default ProgressBar;

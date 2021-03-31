@@ -20,12 +20,22 @@ const filterOptions = [
     unit: '%'
   },
   {
-    name: 'Saturate',
+    name: 'Saturation',
     property: 'saturate',
     value: 100,
     range: {
       min: 20,
       max: 200
+    },
+    unit: '%'
+  },
+  {
+    name: 'Grayscale',
+    property: 'grayscale',
+    value: 0,
+    range: {
+      min: 0,
+      max: 100
     },
     unit: '%'
   }
