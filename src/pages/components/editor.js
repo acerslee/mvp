@@ -6,6 +6,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Button from '@material-ui/core/Button';
 import useLocalStorageState from 'use-local-storage-state';
 import useFirestore from '../../hooks/useFirestore.js';
+import { fireStorage } from '../../../firebase.js';
 
 const Editor = ({clickedImage, boolean}) => {
   const { images } = useFirestore('images');
@@ -23,10 +24,6 @@ const Editor = ({clickedImage, boolean}) => {
     renderedImage = clickedImage;
     // setStorageImage(clickedImage);
   }
-
-  useEffect(() => {
-    renderedImage = storageImage
-  },[])
 
   const selectedFilter = filters[selectedIndex];
 
@@ -71,6 +68,14 @@ const Editor = ({clickedImage, boolean}) => {
             <Button variant = 'contained' onClick={zoomIn}>+</Button>
             <Button variant = 'contained' onClick={zoomOut}>-</Button>
             <Button variant = 'contained' onClick={resetTransform}>Reset</Button>
+            <Button variant = 'contained'>
+                <a
+                href = {renderedImage}
+                download
+              >
+              </a>
+              Download file here
+            </Button>
           </div>
           <TransformComponent>
             <img
