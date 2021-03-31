@@ -7,11 +7,19 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import pineapple from '../../images/pineapples.jpg';
 import Button from '@material-ui/core/Button';
 import useStorage from '../../hooks/useStorage.js';
+import useFirestore from '../../hooks/useFirestore.js';
 
 const Editor = ({image, currentImage}) => {
-
-  console.log(currentImage);
+  // console.log('current image', currentImage[0])
   const { progress, url } = useStorage(image);
+  const { images } = useFirestore('images');
+  console.log('firestoreiamges', images)
+
+  var renderedImage;
+  if (images.length > 0) {
+    renderedImage = images[0].url;
+  }
+  console.log('rendered image', renderedImage)
 
   const [filters, setFilters] = useState(filterOptions)
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -35,8 +43,6 @@ const Editor = ({image, currentImage}) => {
 
     return { filter: styles.join(' ') };
   };
-
-
 
   return(
     <div
@@ -65,7 +71,7 @@ const Editor = ({image, currentImage}) => {
           <TransformComponent>
             <img
               className = 'edit-image'
-              src = {currentImage}
+              src = {renderedImage}
               alt = 'some image'
               style = {setImageFilters()}
             />

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useLocalStorageState from 'use-local-storage-state';
 // import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -10,6 +11,7 @@ const Homepage = () => {
 
   const [currentImage, setCurrentImage] = useState(null);
   const [image, setImage] = useState(null);
+  const [storageImage, setStorageImage] = useLocalStorageState('image', [])
   const [error, setError] = useState(null);
   const [menu, setMenu] = useState(null);
 
@@ -40,7 +42,8 @@ const Homepage = () => {
   }
 
   let renderEditor;
-  if (image) {
+  if (image || currentImage) {
+    console.log('image', image)
     renderEditor = <Editor image = {image} currentImage = {currentImage}/>
   }
 
