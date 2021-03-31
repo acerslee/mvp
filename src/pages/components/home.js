@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
-import useLocalStorageState from 'use-local-storage-state';
 // import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editor from './editor.js';
 import ImageGrid from './imagegrid.js';
+import ProgressBar from './progress.js';
 
 const Homepage = () => {
 
-  const [currentImage, setCurrentImage] = useState(null);
   const [image, setImage] = useState(null);
-  const [storageImage, setStorageImage] = useLocalStorageState('image', [])
+  const [clickedImage, setClickedImage] = useState(null);
   const [error, setError] = useState(null);
   const [menu, setMenu] = useState(null);
+  const [boolean, setBoolean] = useState(false);
 
   const types = ['image/png', 'image/jpeg'];
 
   const handleChange = event => {
+    event.preventDefault();
     let selectedFile = event.target.files[0];
 
+    console.log('selectedfile', selectedFile)
     if (selectedFile && types.includes(selectedFile.type)) {
       setImage(selectedFile);
       setError(null);
@@ -38,13 +40,13 @@ const Homepage = () => {
   };
 
   const updateEditImage = (id, url) => {
-    setCurrentImage(url);
+    setClickedImage(url);
+    setBoolean(true);
   }
 
   let renderEditor;
-  if (image || currentImage) {
-    console.log('image', image)
-    renderEditor = <Editor image = {image} currentImage = {currentImage}/>
+  if (clickedImage) {
+    renderEditor = <Editor clickedImage = {clickedImage} boolean = {boolean} />
   }
 
   return(
@@ -71,8 +73,10 @@ const Homepage = () => {
           <div className = 'output'>
           {error && <div className = 'error'>{error}</div>}
           {image && <div>{image.name}</div>}
+          {image && <ProgressBar image = {image} setImage = {setImage} />}
         </div>
       </form>
+
       {renderEditor}
       <ImageGrid
         updateEditImage = {updateEditImage}

@@ -7,6 +7,7 @@ const useFirestore = collection => {
   useEffect(() => {
     const unsub = fireStore.collection(collection)
       .orderBy('createdAt', 'desc')
+      .limit(10)
       .onSnapshot(snap => {
         let files = [];
         snap.forEach(file => {

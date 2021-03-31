@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import filterOptions from '../../data/filterdata.js';
 import FilterItem from './filterItem.js';
 import Slider from './slider.js';
-import { StaticImage } from 'gatsby-plugin-image';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import pineapple from '../../images/pineapples.jpg';
 import Button from '@material-ui/core/Button';
-import useStorage from '../../hooks/useStorage.js';
+import useLocalStorageState from 'use-local-storage-state';
 import useFirestore from '../../hooks/useFirestore.js';
 
-const Editor = ({image, currentImage}) => {
-  // console.log('current image', currentImage[0])
-  const { progress, url } = useStorage(image);
+const Editor = ({clickedImage, boolean}) => {
   const { images } = useFirestore('images');
-  console.log('firestoreiamges', images)
+
+  const [storageImage, setStorageImage] = useLocalStorageState('storage image', []);
+  const [filters, setFilters] = useState(filterOptions)
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   var renderedImage;
   if (images.length > 0) {
     renderedImage = images[0].url;
   }
-  console.log('rendered image', renderedImage)
 
-  const [filters, setFilters] = useState(filterOptions)
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  if (boolean) {
+    renderedImage = clickedImage;
+    // setStorageImage(clickedImage);
+  }
+
+  useEffect(() => {
+    renderedImage = storageImage
+  },[])
 
   const selectedFilter = filters[selectedIndex];
 

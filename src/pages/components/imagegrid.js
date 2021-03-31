@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
-import useFirestore from '../../hooks/useFirestore'
+import useFirestore from '../../hooks/useFirestore';
 
 const ImageGrid = ({ updateEditImage }) => {
 
@@ -18,8 +18,7 @@ const ImageGrid = ({ updateEditImage }) => {
       {images.map(image => (
         <ImageListItem key = {image.id}>
           <img
-            srcSet = {`${image.url}?w=164&h=164&fit=crop&auto=format 1x,
-                       ${image.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            src = {image.url}
             alt = 'image'
             loading = 'lazy'
             onClick = {() => getImageData(image.id, image.url)}
