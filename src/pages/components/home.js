@@ -4,9 +4,11 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editor from './editor.js';
+import ImageGrid from './imagegrid.js';
 
 const Homepage = () => {
 
+  const [currentImage, setCurrentImage] = useState(null);
   const [image, setImage] = useState(null);
   const [error, setError] = useState(null);
   const [menu, setMenu] = useState(null);
@@ -33,9 +35,13 @@ const Homepage = () => {
     setMenu(null);
   };
 
+  const updateEditImage = (id, url) => {
+    setCurrentImage(url);
+  }
+
   let renderEditor;
   if (image) {
-    renderEditor = <Editor image = {image} />
+    renderEditor = <Editor image = {image} currentImage = {currentImage}/>
   }
 
   return(
@@ -65,6 +71,9 @@ const Homepage = () => {
         </div>
       </form>
       {renderEditor}
+      <ImageGrid
+        updateEditImage = {updateEditImage}
+      />
     </div>
   );
 };
