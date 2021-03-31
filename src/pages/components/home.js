@@ -4,8 +4,6 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editor from './editor.js';
-import ProgressBar from './progress.js';
-
 
 const Homepage = () => {
 
@@ -64,10 +62,9 @@ const Homepage = () => {
           <div className = 'output'>
           {error && <div className = 'error'>{error}</div>}
           {image && <div>{image.name}</div>}
-          {image && <ProgressBar image = {image} setImage = {setImage}/>}
         </div>
       </form>
-      {/* {renderEditor} */}
+      {renderEditor}
     </div>
   );
 };

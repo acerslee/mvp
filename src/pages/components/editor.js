@@ -6,11 +6,12 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import pineapple from '../../images/pineapples.jpg';
 import Button from '@material-ui/core/Button';
+import ImageGrid from './imagegrid.js';
+import useStorage from '../../hooks/useStorage.js';
 
 const Editor = ({image}) => {
 
-  console.log('image', image);
-  console.log('pineapple', pineapple);
+  const { progress, url } = useStorage(image);
 
   const [filters, setFilters] = useState(filterOptions)
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -86,6 +87,7 @@ const Editor = ({image}) => {
           filterSlider = {filterSlider}
         />
       </div>
+      <ImageGrid />
     </div>
   )
 };
