@@ -1,31 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 const Signup = () => {
+
+  const history = useHistory();
+
+  const handleBackClick = () => {
+    history.goBack();
+  };
+
   return(
     <div id = 'signup-page'>
-       <Button>
-        <Link
-          to = '/'
-          style = {{
-            textDecoration: 'none'
-          }}
-        >
+       <Button onClick = {handleBackClick}>
           Back
-        </Link>
        </Button>
-      <p>
-        Already have an account?
         <Link
           to = '/login'
           style = {{
             textDecoration: 'none'
           }}
         >
-          Login here!
+          Already have an account? Login here!
         </Link>
-      </p>
     </div>
   )
 };

@@ -1,25 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 const Login = () => {
 
-  const handleSubmit = () => {
-    console.log('clicked')
-  }
+  const history = useHistory();
 
+  const handleBackClick = () => {
+    history.goBack();
+  };
+
+  const handleSubmit = () => {
+  }
 
   return(
     <div id = 'login-page'>
-      <Button>
-        <Link
-          to = '/'
-          style = {{
-            textDecoration: 'none'
-          }}
-        >
+       <Button onClick = {handleBackClick}>
           Back
-        </Link>
        </Button>
       <form onSubmit = {handleSubmit}>
         <input
@@ -37,17 +34,14 @@ const Login = () => {
         </input>
         <button type = 'button'>Submit</button>
       </form>
-      <p>
-        Don't have an account?
         <Link
               to = '/signup'
               style = {{
                 textDecoration: 'none'
               }}
             >
-            Signup here!
+             Don't have an account? Signup here!
         </Link>
-      </p>
     </div>
   )
 };

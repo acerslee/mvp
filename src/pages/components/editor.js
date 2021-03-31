@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 
 const Editor = () => {
 
+  // console.log('image', this.props)
+
   const [filters, setFilters] = useState(filterOptions)
   const [selectedIndex, setSelectedIndex] = useState(0);
 

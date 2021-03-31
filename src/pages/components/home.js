@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editor from './editor.js';
+import AddImage from './addimage.js';
 
 const Homepage = () => {
 
@@ -35,6 +36,7 @@ const Homepage = () => {
           {/* <Link to = '/'>Logout</Link> */}
         </MenuItem>
       </Menu>
+      <AddImage />
       <Editor />
     </div>
   );
