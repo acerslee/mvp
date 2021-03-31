@@ -4,11 +4,13 @@ import FilterItem from './filterItem.js';
 import Slider from './slider.js';
 import { StaticImage } from 'gatsby-plugin-image';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import pineapple from '../../images/pineapples.jpg';
 import Button from '@material-ui/core/Button';
 
-const Editor = () => {
+const Editor = ({image}) => {
 
-  // console.log('image', this.props)
+  console.log('image', `/static/${image.name}`);
+  console.log('pineapple', pineapple);
 
   const [filters, setFilters] = useState(filterOptions)
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,10 +60,10 @@ const Editor = () => {
             <Button variant = 'contained' onClick={resetTransform}>Reset</Button>
           </div>
           <TransformComponent>
-            <StaticImage
+            <img
               className = 'edit-image'
-              src = '../../images/pineapples.jpg'
-              alt = 'pineapples'
+              src = {pineapple}
+              alt = {image.name}
               style = {setImageFilters()}
             />
           </TransformComponent>

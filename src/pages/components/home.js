@@ -8,7 +8,23 @@ import AddImage from './addimage.js';
 
 const Homepage = () => {
 
+  const [image, setImage] = useState(null);
+  const [error, setError] = useState(null);
   const [menu, setMenu] = useState(null);
+
+  const types = ['image/png', 'image/jpeg'];
+
+  const handleChange = event => {
+    let selectedFile = event.target.files[0];
+
+    if (selectedFile && types.includes(selectedFile.type)) {
+      setImage(selectedFile);
+      setError(null);
+    } else {
+      setImage(null);
+      setError('Please select either a .jpeg or .png file');
+    }
+  }
 
   const handleClick = (event) => {
     setMenu(event.currentTarget)
@@ -17,6 +33,11 @@ const Homepage = () => {
   const handleClose = () => {
     setMenu(null);
   };
+
+  let renderEditor;
+  if (image) {
+    renderEditor = <Editor image = {image} />
+  }
 
   return(
     <div id = 'homepage'>
@@ -36,8 +57,15 @@ const Homepage = () => {
           {/* <Link to = '/'>Logout</Link> */}
         </MenuItem>
       </Menu>
-      <AddImage />
-      <Editor />
+
+      <form>
+        <input type = 'file' onChange = {handleChange} />
+          <div className = 'output'>
+          {error && <div className = 'error'>{error}</div>}
+        </div>
+      </form>
+      {/* <AddImage /> */}
+      {renderEditor}
     </div>
   );
 };
