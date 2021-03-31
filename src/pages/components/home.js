@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Editor from './editor.js';
-import AddImage from './addimage.js';
+import useStorage from '../../hooks/useStorage.js';
 
 const Homepage = () => {
 
@@ -62,9 +62,9 @@ const Homepage = () => {
         <input type = 'file' onChange = {handleChange} />
           <div className = 'output'>
           {error && <div className = 'error'>{error}</div>}
+          {image && <div>{image.name}</div>}
         </div>
       </form>
-      {/* <AddImage /> */}
       {renderEditor}
     </div>
   );

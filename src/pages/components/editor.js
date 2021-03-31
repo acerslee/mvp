@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 
 const Editor = ({image}) => {
 
-  console.log('image', `/static/${image.name}`);
+  console.log('image', image);
   console.log('pineapple', pineapple);
 
   const [filters, setFilters] = useState(filterOptions)

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import Intro from './components/intro.js';
 import Login from './components/login.js';
 import Signup from './components/signup.js';
-import AddImage from './components/addimage.js';
 import Homepage from './components/home.js';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
