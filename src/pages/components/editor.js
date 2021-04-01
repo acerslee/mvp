@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import filterOptions from '../../data/filterdata.js';
 import FilterItem from './filterItem.js';
 import Slider from './slider.js';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Button from '@material-ui/core/Button';
 import useFirestore from '../../hooks/useFirestore.js';
-import pineapple from '../../images/pineapples.jpg';
 
-const imageVariable = document.getElementById('edit-image');
-
+// const imageVariable = document.getElementById('edit-image');
 
 const Editor = ({clickedImage, boolean}) => {
   const { images } = useFirestore('images');
@@ -146,26 +144,32 @@ const Editor = ({clickedImage, boolean}) => {
               <img
                 id = 'edit-image'
                 src = {renderedImage}
-                alt = 'some image'
+                alt = 'something'
                 style = {setImageFilters()}
-                // style = {{
-                //   height: '400px',
-                //   width: '500px'
-                // }}
               />
           </TransformComponent>
         </React.Fragment>
       )}
       </TransformWrapper>
-      <div className = 'filters'>
-        {filters.map((filter, index) => (
-          <FilterItem
-            key = {index}
-            name = {filter.name}
-            active = {index === selectedIndex}
-            handleClick = {() => setSelectedIndex(index)}
-          />
-        ))}
+      <div
+        className = 'filters'
+        style = {{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <div className = 'filter-container'>
+          {filters.map((filter, index) => (
+            <FilterItem
+              key = {index}
+              name = {filter.name}
+              active = {index === selectedIndex}
+              handleClick = {() => setSelectedIndex(index)}
+            />
+          ))}
+        </div>
         <Slider
           min = {selectedFilter.range.min}
           max = {selectedFilter.range.max}
@@ -173,7 +177,6 @@ const Editor = ({clickedImage, boolean}) => {
           filterSlider = {filterSlider}
         />
       </div>
-
     </div>
   )
 };

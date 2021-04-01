@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Container from '@material-ui/core/Container';
 
 const Intro = () => {
   return(
@@ -10,12 +11,14 @@ const Intro = () => {
         <meta charSet = 'utf-8' />
         <title>MVP</title>
       </Helmet>
-      <h1>WELCOME!</h1>
+      <Container component = "main" maxWidth = "xs">
+      <h1>Welcome!</h1>
       <Button variant = 'contained'>
       <Link
           to = '/login'
           style = {{
-            textDecoration: 'none'
+            textDecoration: 'none',
+            color: 'white'
           }}
         >
             Login
@@ -25,12 +28,14 @@ const Intro = () => {
         <Link
           to = '/signup'
           style = {{
-            textDecoration: 'none'
+            textDecoration: 'none',
+            color: 'white'
           }}
         >
             Signup
         </Link>
       </Button>
+      </Container>
     </div>
   )
 };

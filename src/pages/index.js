@@ -29,7 +29,9 @@ const IndexPage = () => {
          <Route path = '/login'>
            <Login />
          </Route>
-        <Route path = '/home' component = {Homepage} />
+        <Route path = '/home'>
+          <Homepage />
+        </Route>
      </Switch>
   </BrowserRouter>
 
@@ -37,4 +39,4 @@ const IndexPage = () => {
   );
 }
 
-export default IndexPage
+export default IndexPage;

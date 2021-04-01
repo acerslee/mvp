@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Editor from './editor.js';
 import useStorage from '../../hooks/useStorage.js';
 
 const ProgressBar = ({ image, setImage }) => {

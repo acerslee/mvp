@@ -27,7 +27,7 @@ const ImageGrid = ({ updateEditImage }) => {
         <ImageListItem key = {image.id}>
           <img
             src = {image.url}
-            alt = 'image'
+            alt = 'something'
             loading = 'lazy'
             onClick = {() => getImageData(image.id, image.url)}
           />

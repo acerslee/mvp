@@ -9,6 +9,9 @@ const Slider = ({ min, max, value, filterSlider }) => (
       max = {max}
       value = {value}
       onChange = {filterSlider}
+      style = {{
+        width: '20vw'
+      }}
     />
     <p>{value}</p>
   </div>
