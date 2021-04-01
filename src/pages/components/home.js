@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -69,8 +69,8 @@ const Homepage = () => {
         onClose = {handleClose}
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>Logout
-          {/* <Link to = '/'>Logout</Link> */}
+        <MenuItem onClick={handleClose}>
+          <Link to = '/' style = {{textDecoration: 'none', color: 'black'}}>Logout</Link>
         </MenuItem>
       </Menu>
 

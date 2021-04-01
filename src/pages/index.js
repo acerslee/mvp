@@ -20,7 +20,7 @@ const IndexPage = () => {
       </Helmet>
     <BrowserRouter>
       <Switch>
-         {/* <Route exact path = '/'>
+         <Route exact path = '/'>
            <Intro />
          </Route> />
          <Route path = '/signup'>
@@ -28,8 +28,8 @@ const IndexPage = () => {
          </Route>
          <Route path = '/login'>
            <Login />
-         </Route> */}
-        <Route path = '/' component = {Homepage} />
+         </Route>
+        <Route path = '/home' component = {Homepage} />
      </Switch>
   </BrowserRouter>
 
