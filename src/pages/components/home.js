@@ -12,8 +12,8 @@ const Homepage = () => {
   const [image, setImage] = useState(null);
   const [clickedImage, setClickedImage] = useState(null);
   const [error, setError] = useState(null);
-  const [menu, setMenu] = useState(null);
   const [boolean, setBoolean] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const types = ['image/png', 'image/jpeg'];
 
@@ -32,11 +32,11 @@ const Homepage = () => {
   }
 
   const handleClick = (event) => {
-    setMenu(event.currentTarget)
+    setAnchorEl(event.currentTarget)
   };
 
   const handleClose = () => {
-    setMenu(null);
+    setAnchorEl(null);
   };
 
   const updateEditImage = (id, url) => {
@@ -51,31 +51,37 @@ const Homepage = () => {
 
   return(
     <div id = 'homepage'>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick = {handleClick}>
+      <Button
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick = {handleClick}
+        style = {{
+          textAlign: 'center'
+        }}
+      >
         Menu
       </Button>
       <Menu
         id = 'menu'
-        menu = {menu}
+        anchorEl = {anchorEl}
         keepMounted
-        open = {Boolean(menu)}
+        open = {Boolean(anchorEl)}
         onClose = {handleClose}
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose}>Logout
           {/* <Link to = '/'>Logout</Link> */}
         </MenuItem>
       </Menu>
 
-      <form>
+      <div className = 'output'>
         <input type = 'file' onChange = {handleChange} />
           <div className = 'output'>
-          {error && <div className = 'error'>{error}</div>}
-          {image && <div>{image.name}</div>}
-          {image && <ProgressBar image = {image} setImage = {setImage} />}
+            {error && <div className = 'error'>{error}</div>}
+            {image && <div>{image.name}</div>}
+            {image && <ProgressBar image = {image} setImage = {setImage} />}
         </div>
-      </form>
+      </div>
 
       {renderEditor}
       <ImageGrid

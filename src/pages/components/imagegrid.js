@@ -12,7 +12,15 @@ const ImageGrid = ({ updateEditImage }) => {
   };
 
   return(
-    <div className = 'image-grid-container'>
+    <div
+      className = 'image-grid-container'
+      style = {{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}
+    >
       <h1 className = 'image-grid-caption'>My Collection</h1>
       <ImageList sx = {{width: 800, height: 500}} cols = {3} rowHeight = {160}>
       {images.map(image => (

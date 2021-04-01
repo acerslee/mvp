@@ -11,13 +11,13 @@ const IndexPage = () => {
   // const user = null;
 
   return(
-    // <Helmet>
-    //   <meta charSet = "utf-8" />
-    //   <title>MVP</title>
-    // </Helmet>
-    // user ?
-    //   <Homepage />
-    // :
+    <div id = 'root'>
+      <Helmet>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"
+        integrity="sha512-JjFeUD2H//RHt+DjVf1BTuy1X5ZPtMl0svQ3RopX641DWoSilJ89LsFGq4Sw/6BSBfULqUW/CfnVopV5CfvRXA=="
+        crossorigin="anonymous"></script>
+      </Helmet>
     <BrowserRouter>
       <Switch>
          {/* <Route exact path = '/'>
@@ -32,6 +32,8 @@ const IndexPage = () => {
         <Route path = '/' component = {Homepage} />
      </Switch>
   </BrowserRouter>
+
+  </div>
   );
 }
 

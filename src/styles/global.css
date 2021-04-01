@@ -8,6 +8,25 @@ body{
   /* background-color: purple; */
 }
 
+/*homepage*/
+
+.output{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error{
+  color: red;
+}
+
+/* editor */
 .active{
   color:orange !important;
 }
+
+#edit-image{
+  height:600px;
+  width:600px;
+}
+

@@ -4,14 +4,15 @@ import FilterItem from './filterItem.js';
 import Slider from './slider.js';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Button from '@material-ui/core/Button';
-import useLocalStorageState from 'use-local-storage-state';
 import useFirestore from '../../hooks/useFirestore.js';
-import { fireStorage } from '../../../firebase.js';
+import pineapple from '../../images/pineapples.jpg';
+
+const imageVariable = document.getElementById('edit-image');
+
 
 const Editor = ({clickedImage, boolean}) => {
   const { images } = useFirestore('images');
 
-  const [storageImage, setStorageImage] = useLocalStorageState('storage image', []);
   const [filters, setFilters] = useState(filterOptions)
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -22,7 +23,6 @@ const Editor = ({clickedImage, boolean}) => {
 
   if (boolean) {
     renderedImage = clickedImage;
-    // setStorageImage(clickedImage);
   }
 
   const selectedFilter = filters[selectedIndex];
@@ -45,6 +45,74 @@ const Editor = ({clickedImage, boolean}) => {
     return { filter: styles.join(' ') };
   };
 
+
+
+  // uploadFile.addEventListener('change', () => {
+  //   // const file = document.getElementById('upload-file').files[0]
+  //   const reader = new FileReader();
+  //   console.log('dcheckpoint 1?')
+  //   if (renderedImage) {
+  //     fileName = renderedImage.url;
+  //     reader.readAsDataURL(renderedImage)
+  //   }
+  //   console.log('dcheckpoint 2?')
+  //   reader.addEventListener('load', () => {
+  //     console.log('dcheckpoint 3?')
+  //     img = new Image();
+  //     img.src = reader.result;
+  //     img.onload = function() {
+  //       canvas.width = img.width;
+  //       canvas.height = img.height;
+  //       canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+
+  //       console.log('did it rach?')
+  //     };
+  //   }, false);
+  // })
+
+
+  // var canvas = document.getElementById('canvas');
+
+  // if (imageVariable !== null) {
+  //   imageVariable.addEventListener('load', () => {
+  //     var img = new Image();
+  //     console.log('canvas',canvas);
+  //     var ctx = canvas.getContext('2d');
+
+  //     img.onload = function() {
+  //       ctx.drawImage(img, 0, 0, 500, 500);
+  //     };
+  //     img.src = '../../images/pineapples.jpg';
+  //   });
+  // }
+
+
+  // function download(canvas, filename) {
+  //   let event;
+
+  //   const link = document.createElement('a');
+
+  //   link.download = filename;
+  //   link.href = canvas.toDataURL('image/jpeg',0.8);
+  //   event = new MouseEvent('click');
+  //   link.dispatchEvent(event);
+  // }
+
+  // const downloadFile = () => {
+  //   const fileURL = renderedImage.substring(0, renderedImage.indexOf('?'));
+  //   const lastIndexSlash = fileURL.lastIndexOf('/') + 1;
+  //   const newfileURL = fileURL.substring(lastIndexSlash, fileURL.length);
+
+  //   const fileExtension = newfileURL.slice(-4);
+
+  //   let newFilename;
+  //   if (fileExtension === '.jpg' || fileExtension === '.JPG' || fileExtension === '.png' || fileExtension === '.PNG'){
+  //     newFilename = newfileURL.substring(0, newfileURL.length - 4) + '-edited.jpg';
+  //   }
+
+  //   download(canvas, newFilename);
+  // }
+
   return(
     <div
       id = 'photo-editor'
@@ -57,6 +125,8 @@ const Editor = ({clickedImage, boolean}) => {
         width: '100vw'
       }}
     >
+
+
       <TransformWrapper
         defaultScale = {1}
         defaultPositionX = {200}
@@ -68,22 +138,21 @@ const Editor = ({clickedImage, boolean}) => {
             <Button variant = 'contained' onClick={zoomIn}>+</Button>
             <Button variant = 'contained' onClick={zoomOut}>-</Button>
             <Button variant = 'contained' onClick={resetTransform}>Reset</Button>
-            <Button variant = 'contained'>
-                <a
-                href = {renderedImage}
-                download
-              >
-              </a>
-              Download file here
+            <Button variant = 'contained' id = 'download-button'>Download file here
             </Button>
           </div>
           <TransformComponent>
-            <img
-              className = 'edit-image'
-              src = {renderedImage}
-              alt = 'some image'
-              style = {setImageFilters()}
-            />
+            {/* <canvas id = 'canvas'></canvas> */}
+              <img
+                id = 'edit-image'
+                src = {renderedImage}
+                alt = 'some image'
+                style = {setImageFilters()}
+                // style = {{
+                //   height: '400px',
+                //   width: '500px'
+                // }}
+              />
           </TransformComponent>
         </React.Fragment>
       )}

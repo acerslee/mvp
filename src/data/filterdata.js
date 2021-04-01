@@ -69,6 +69,16 @@ const filterOptions = [
     },
     unit: '%'
   },
+  {
+    name: 'Blur',
+    property: 'blur',
+    value: 0,
+    range: {
+      min: 0,
+      max: 10
+    },
+    unit: 'px'
+  },
 ];
 
 module.exports = filterOptions;
