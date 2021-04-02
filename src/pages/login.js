@@ -96,7 +96,12 @@ const Login = () => {
           color="primary"
           className={classes.submit}
         >
-          <Link to = '/home'  style = {{textDecoration: 'none', color: 'white'}}>
+          <Link
+            to = '/home'
+            style = {{
+              textDecoration: 'none',
+              color: 'white'
+          }}>
           Sign In
           </Link>
 

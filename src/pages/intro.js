@@ -9,7 +9,7 @@ const Intro = () => {
     <div id = 'intro-page'>
       <Helmet>
         <meta charSet = 'utf-8' />
-        <title>MVP</title>
+        <title>Photo Editor</title>
       </Helmet>
       <Container component = "main" maxWidth = "xs">
       <h1>Welcome!</h1>
