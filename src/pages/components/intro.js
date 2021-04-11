@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Container from '@material-ui/core/Container';
 
