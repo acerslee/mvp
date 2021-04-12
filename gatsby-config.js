@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "PhotoShack - MVP",
+    title: "PhotoShack",
     author: "Alex Lee",
-    description: "MVP Project developed using Gatsby and Firebase"
+    description: "PhotoShack is a photo-editor with a user authentication system. Developed using Gatsby and Firebase"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -12,13 +12,5 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
   ],
 };

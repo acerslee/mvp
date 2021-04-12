@@ -2,7 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/storage';
 import 'firebase/firestore';
-import { FIREBASE_API_KEY, FIREBASE_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID } from './firebase_key.js';
+import {
+    FIREBASE_API_KEY,
+    FIREBASE_DOMAIN,
+    FIREBASE_PROJECT_ID,
+    FIREBASE_STORAGE_BUCKET,
+    FIREBASE_MESSAGING_SENDER_ID,
+    FIREBASE_APP_ID
+  } from './firebase_key.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
