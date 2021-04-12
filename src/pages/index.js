@@ -20,7 +20,6 @@ const useStyles = makeStyles({
   }
 });
 
-
 const IndexPage = () => {
 
   const classes = useStyles();
