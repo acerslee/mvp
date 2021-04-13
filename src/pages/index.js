@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import { Button } from '@material-ui/core';
 import { AuthProvider } from '../hooks/authorization.js';
@@ -10,7 +9,6 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center'
   },
   buttons: {
@@ -25,10 +23,11 @@ const IndexPage = () => {
   const classes = useStyles();
   // const user = null;
   return(
-    <AuthProvider>
-      <div id = 'intro-page' className = {classes.root}>
+
+      <div className = {classes.root}>
+          <AuthProvider>
        <Seo />
-        <h1>Welcome to Photo Editor</h1>
+        <h1 className = 'intro-header'>Welcome to Photo Editor</h1>
         <div className = {classes.buttons}>
           <Button variant = 'contained'>
           <Link
@@ -53,8 +52,9 @@ const IndexPage = () => {
             </Link>
           </Button>
         </div>
-      </div>
+
     </AuthProvider>
+    </div>
   )
 }
 
