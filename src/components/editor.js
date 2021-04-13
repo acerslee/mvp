@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import filterOptions from '../../data/filterdata.js';
+import filterOptions from '../data/filterdata.js';
 import FilterItem from './filterItem.js';
 import Slider from './slider.js';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Button from '@material-ui/core/Button';
-import useFirestore from '../../hooks/useFirestore.js';
+import useFirestore from '../hooks/useFirestore.js';
 
 // const imageVariable = document.getElementById('edit-image');
 

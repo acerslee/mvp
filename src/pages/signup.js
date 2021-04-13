@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useAuth } from '../hooks/authorization.js';
 import Typography from '@material-ui/core/Typography';
-import Copyright from './components/copyright.js'
+import Copyright from '../components/copyright.js'
 
 const useStyles = makeStyles((theme) => ({
   paper: {

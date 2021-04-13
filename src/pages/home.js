@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Editor from './components/editor.js';
-import ImageGrid from './components/imagegrid.js';
-import ProgressBar from './components/progress.js';
+import Editor from '../components/editor.js';
+import ImageGrid from '../components/imagegrid.js';
+import ProgressBar from '../components/progress.js';
 
 const Homepage = () => {
 

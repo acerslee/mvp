@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
-import useFirestore from '../../hooks/useFirestore';
+import useFirestore from '../hooks/useFirestore';
 
 const ImageGrid = ({ updateEditImage }) => {
 

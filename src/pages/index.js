@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Button } from '@material-ui/core';
 import { AuthProvider } from '../hooks/authorization.js';
 import { makeStyles } from '@material-ui/core/styles';
-import Seo from './components/SEO.js';
+import Seo from '../components/SEO.js';
 
 const useStyles = makeStyles({
   root: {
