@@ -75,7 +75,10 @@ const Homepage = () => {
       </Menu>
 
       <div className = 'output'>
-        <input type = 'file' onChange = {handleChange} />
+        <input
+          type = 'file'
+          onChange = {handleChange}
+        />
           <div className = 'output'>
             {error && <div className = 'error'>{error}</div>}
             {image && <div>{image.name}</div>}

@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { useAuth } from '../hooks/authorization.js';
+import { useAuth } from '../hooks/useAuthorization.js';
 import Typography from '@material-ui/core/Typography';
 import Copyright from '../components/copyright.js'
 
@@ -37,12 +37,16 @@ const Signup = () => {
   const classes = useStyles();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { signup } = useAuth();
+  // const { signUpUser } = useAuth();
+
 
   const handleSubmit = event => {
+
+    console.log(emailRef);
+    console.log(passwordRef);
     event.preventDefault()
 
-    signup(emailRef.current.value, passwordRef.current.value)
+    // signup(emailRef.current.value, passwordRef.current.value)
   }
 
   return(

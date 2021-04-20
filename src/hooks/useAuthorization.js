@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { fireAuthorization } from '../../firebase.js';
 
-const AuthContext = React.createContext();
+export const AuthContext = React.createContext();
 
-export const useAuth = () => {
+export function useAuth() {
   return useContext(AuthContext)
 };
 
-export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState(null);
 
-  const signup = (email, password) => {
+  function signUpUser(email, password) {
     return fireAuthorization.createUserWithEmailAndPassword(email, password)
   }
 
@@ -25,11 +25,13 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     currentUser,
-    signup
+    signUpUser
   };
 
   return (
-    <AuthContext.Provider value = {value}>
+    <AuthContext.Provider
+      value = {value}
+    >
       {children}
     </AuthContext.Provider>
   )

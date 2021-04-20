@@ -1,34 +1,30 @@
 import * as React from "react";
 import { Link } from 'gatsby';
 import { Button } from '@material-ui/core';
-import { AuthProvider } from '../hooks/authorization.js';
-import { makeStyles } from '@material-ui/core/styles';
+import { AuthProvider } from '../hooks/useAuthorization.js';
+import styled from 'styled-components';
 import Seo from '../components/SEO.js';
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  buttons: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly'
-  }
-});
+const RootContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const Buttons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`
 
 const IndexPage = () => {
 
-  const classes = useStyles();
   // const user = null;
   return(
-
-      <div className = {classes.root}>
-          <AuthProvider>
+    <AuthProvider>
+      <RootContainer>
        <Seo />
         <h1 className = 'intro-header'>Welcome to Photo Editor</h1>
-        <div className = {classes.buttons}>
+        <Buttons>
           <Button variant = 'contained'>
           <Link
               to = '/login'
@@ -51,10 +47,9 @@ const IndexPage = () => {
                 Signup
             </Link>
           </Button>
-        </div>
-
+        </Buttons>
+      </RootContainer>
     </AuthProvider>
-    </div>
   )
 }
 
