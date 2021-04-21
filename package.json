@@ -25,6 +25,7 @@
     "caman": "^4.1.2",
     "dotenv": "^8.2.0",
     "firebase": "^8.3.1",
+    "firebase-admin": "^9.6.0",
     "gatsby": "^3.2.0",
     "gatsby-env-variables": "^2.0.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
