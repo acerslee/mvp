@@ -9,8 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { useAuth } from '../hooks/useAuthorization.js';
-import Typography from '@material-ui/core/Typography';
+// import { useAuth } from '../hooks/useAuthorization.js';
 import Copyright from '../components/copyright.js'
 
 const useStyles = makeStyles((theme) => ({
@@ -35,19 +34,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Signup = () => {
   const classes = useStyles();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  // const { signUpUser } = useAuth();
+  // const emailRef = useRef();
+  // const passwordRef = useRef();
+  // // const { signUpUser } = useAuth();
 
 
-  const handleSubmit = event => {
+  // const handleSubmit = event => {
 
-    console.log(emailRef);
-    console.log(passwordRef);
-    event.preventDefault()
+  //   console.log(emailRef);
+  //   console.log(passwordRef);
+  //   event.preventDefault()
 
-    // signup(emailRef.current.value, passwordRef.current.value)
-  }
+  //   // signup(emailRef.current.value, passwordRef.current.value)
+  // }
 
   return(
     <div id = 'signup-page'>
@@ -59,9 +58,9 @@ const Signup = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <h1>
           Sign up
-        </Typography>
+        </h1>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

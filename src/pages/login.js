@@ -8,7 +8,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from '../components/copyright.js';
@@ -48,9 +47,9 @@ const Login = () => {
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <h1>
             Sign in
-          </Typography>
+          </h1>
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"

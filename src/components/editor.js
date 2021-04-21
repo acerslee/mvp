@@ -41,7 +41,7 @@ const Editor = ({clickedImage, boolean}) => {
     });
   };
 
-  const setImageFilters = (e) => {
+  const setImageFilters = () => {
     const styles = filters.map(filter => {
       return `${filter.property}(${filter.value}${filter.unit})`
     })
@@ -49,8 +49,7 @@ const Editor = ({clickedImage, boolean}) => {
     return { filter: styles.join(' ') };
   };
 
-  const resetFilters = (e) => {
-    console.log(e);
+  const resetFilters = () => {
     const styles = filters.map(filter => {
       if (
         filter.property === 'brightness'
@@ -67,7 +66,9 @@ const Editor = ({clickedImage, boolean}) => {
       ){
         filter.value = 0;
       }
+      return `${filter.property}(${filter.value}${filter.unit})`
     })
+    return { filter: styles.join(' ') };
   };
 
   // uploadFile.addEventListener('change', () => {
