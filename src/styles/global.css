@@ -5,17 +5,9 @@
 body{
   margin: 0;
   padding: 0;
-  /* background-color: purple; */
-}
-
-.intro-header{
-  font-family: pacifico;
-  font-size: 5vw;
 }
 
 /*homepage*/
-
-
 .output{
   display: flex;
   justify-content: center;
@@ -29,9 +21,4 @@ body{
 /* editor */
 .active{
   color:orange !important;
-}
-
-#edit-image{
-  max-height:600px;
-  width:auto;
 }

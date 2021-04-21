@@ -6,6 +6,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Editor from '../components/editor.js';
 import ImageGrid from '../components/imagegrid.js';
 import ProgressBar from '../components/progress.js';
+import styled from 'styled-components';
+
+const OutputContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Homepage = () => {
 
@@ -74,17 +81,17 @@ const Homepage = () => {
         </MenuItem>
       </Menu>
 
-      <div className = 'output'>
+      <OutputContainer>
         <input
           type = 'file'
           onChange = {handleChange}
         />
-          <div className = 'output'>
+          <OutputContainer>
             {error && <div className = 'error'>{error}</div>}
             {image && <div>{image.name}</div>}
             {image && <ProgressBar image = {image} setImage = {setImage} />}
-        </div>
-      </div>
+        </OutputContainer>
+      </OutputContainer>
 
       {renderEditor}
       <ImageGrid

@@ -15,6 +15,10 @@ const Buttons = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 `
+const IntroHeader = styled.h1`
+  font-family: pacifico;
+  font-size: 5vw;
+`
 
 const IndexPage = () => {
 
@@ -23,7 +27,9 @@ const IndexPage = () => {
     <AuthProvider>
       <RootContainer>
        <Seo />
-        <h1 className = 'intro-header'>Welcome to Photo Editor</h1>
+        <IntroHeader>
+          Welcome to Photo Editor
+        </IntroHeader>
         <Buttons>
           <Button variant = 'contained'>
           <Link
